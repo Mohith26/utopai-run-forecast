@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Night Ferry · pai-pro (Run Forecast concept)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234285F4'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="top-left">
+      <button class="icon-btn" aria-label="Back to projects" title="Back to projects">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="title-btn" id="title">The Night Ferry</button>
+    </div>
+    <div class="tabs">
+      <button class="tab on">Canvas</button>
+      <button class="tab">Timeline</button>
+    </div>
+    <div class="top-right">
+      <div class="gen-mode" role="group" aria-label="Generation mode">
+        <button class="gen-opt on" title="Paid generations pause for draft review before they run.">Review drafts</button>
+        <button class="gen-opt" title="Turn off draft review so paid generations run immediately.">Run immediately</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="split">
+    <section class="left canvas-host">
+      <div class="canvas" id="canvas">
+        <div class="viewport" id="viewport"></div>
+      </div>
+      <div class="rail">
+        <button class="rail-btn" title="Undo (⌘Z)" aria-label="Undo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg></button>
+        <button class="rail-btn" title="Redo (⇧⌘Z)" aria-label="Redo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13"/></svg></button>
+        <div class="rail-sep"></div>
+        <button class="rail-btn" title="Assets" aria-label="Assets"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></button>
+        <button class="rail-btn" id="railForecast" title="Run forecast" aria-label="Run forecast"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h2v-3H7z"/><path d="M12 16h2V8h-2z"/><path d="M17 16h2v-6h-2z"/></svg></button>
+      </div>
+      <aside class="drawer" id="drawer" hidden>
+        <div class="drawer-head">
+          <div class="seg-tabs" id="drawerTabs">
+            <button class="seg-tab on" data-tab="shots">Shots <span class="cnt" id="cntShots"></span></button>
+            <button class="seg-tab" data-tab="backtest">Backtest</button>
+            <button class="seg-tab" data-tab="model">Model</button>
+          </div>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+            <span class="dim mono" style="font-size:10.5px" id="drawerMeta"></span>
+            <button class="rail-btn" id="drawerClose" title="Close" aria-label="Close" style="width:28px;height:28px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+          </div>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+      </aside>
+      <div class="zoom-bar">
+        <button class="zoom-bar-btn" title="Fit view"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 4.5v-3h3M9.5 1.5h3v3M12.5 9.5v3h-3M4.5 12.5h-3v-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></button>
+        <div class="zoom-track" id="zoomTrack"><i id="zoomThumb"></i></div>
+        <button class="zoom-bar-btn">Tidy</button>
+      </div>
+      <div class="save-pill"><span class="save-dot"></span>Saved</div>
+      <footer class="disclaimer">Unofficial concept demo by Mohith Gajjela. Not affiliated with Utopai Studios. Synthetic data.</footer>
+    </section>
+    <div class="sep"></div>
+    <section class="right">
+      <div class="agent-head">
+        <div class="agent-trigger"><span class="agent-bolt"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>Codex<span class="agent-chev">▼</span></div>
+        <div style="display:flex;justify-content:flex-end"><button class="auto-btn" aria-pressed="true" title="Plan and run a full video through a scoped Auto approval gate.">Auto</button></div>
+      </div>
+      <div class="auto" id="auto">
+        <div class="auto-row">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span class="auto-badge">Auto Approval required</span>
+            <span class="auto-sub" id="capText"></span>
+          </div>
+          <button class="ghost">Cancel</button>
+        </div>
+        <textarea class="brief" rows="2" id="brief">A 78-second short: a ferry captain finds a stowaway in the engine room, they ride out a squall, and his map leads them to a lighthouse at dawn.</textarea>
+        <div class="ctrl-row">
+          <label>Budget <input class="inp" id="budget" value="40" inputmode="decimal" /></label>
+          <button class="btn-light">Revise plan</button>
+          <button class="btn-em">Run Auto</button>
+          <span class="est tabular" id="estLine"></span>
+        </div>
+        <div class="fc" id="fc"></div>
+      </div>
+      <div class="term" id="term"></div>
+    </section>
+  </div>
+</div>
+<div class="tip" id="tip" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

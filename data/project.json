@@ -1,0 +1,194 @@
+{
+ "title": "The Night Ferry",
+ "res": "720p",
+ "anchors": [
+  {
+   "kind": "character_sheet",
+   "label": "Ines, ferry captain (sheet)"
+  },
+  {
+   "kind": "character_sheet",
+   "label": "Teo, stowaway (sheet)"
+  },
+  {
+   "kind": "location",
+   "label": "Ferry deck, night"
+  },
+  {
+   "kind": "location",
+   "label": "Ferry deck, storm"
+  },
+  {
+   "kind": "location",
+   "label": "Engine room"
+  },
+  {
+   "kind": "location",
+   "label": "Lighthouse at dawn"
+  },
+  {
+   "kind": "voice",
+   "label": "Ines voice"
+  },
+  {
+   "kind": "voice",
+   "label": "Teo voice"
+  },
+  {
+   "kind": "voice",
+   "label": "Narrator VO"
+  }
+ ],
+ "shots": [
+  {
+   "id": 1,
+   "title": "The crossing",
+   "heading": "EXT. FERRY DECK - NIGHT",
+   "hasRef": true,
+   "beats": [
+    {
+     "id": "1a",
+     "t0": 0,
+     "t1": 6,
+     "chars": 0,
+     "motion": 1,
+     "text": "Wide. The old ferry cuts across black water, one lamp swinging at the bow."
+    },
+    {
+     "id": "1b",
+     "t0": 6,
+     "t1": 12,
+     "chars": 1,
+     "motion": 1,
+     "text": "INES (50s, oilskin coat) walks the rail with a lantern, checking the ropes."
+    }
+   ],
+   "res": "720p"
+  },
+  {
+   "id": 2,
+   "title": "Someone below",
+   "heading": "INT. ENGINE ROOM - NIGHT",
+   "hasRef": true,
+   "beats": [
+    {
+     "id": "2a",
+     "t0": 0,
+     "t1": 5,
+     "chars": 1,
+     "motion": 0,
+     "text": "Ines stops. A clang from behind the boiler. She lifts the lantern."
+    },
+    {
+     "id": "2b",
+     "t0": 5,
+     "t1": 10,
+     "chars": 2,
+     "motion": 2,
+     "text": "TEO (11, oversized hoodie) bolts from behind the pipes toward the ladder."
+    },
+    {
+     "id": "2c",
+     "t0": 10,
+     "t1": 15,
+     "chars": 2,
+     "motion": 2,
+     "text": "Ines catches his sleeve at the bottom rung. He twists, then gives up."
+    }
+   ],
+   "res": "720p"
+  },
+  {
+   "id": 3,
+   "title": "The deal",
+   "heading": "INT. ENGINE ROOM - CONTINUOUS",
+   "hasRef": true,
+   "beats": [
+    {
+     "id": "3a",
+     "t0": 0,
+     "t1": 5,
+     "chars": 2,
+     "motion": 0,
+     "text": "TEO: \"I just need to get to the lighthouse.\" Ines studies him."
+    },
+    {
+     "id": "3b",
+     "t0": 5,
+     "t1": 10,
+     "chars": 2,
+     "motion": 0,
+     "text": "INES: \"Then you work the crossing like everyone else.\" She hands him gloves."
+    }
+   ],
+   "res": "720p"
+  },
+  {
+   "id": 4,
+   "title": "The squall",
+   "heading": "EXT. FERRY DECK - STORM",
+   "hasRef": true,
+   "beats": [
+    {
+     "id": "4a",
+     "t0": 0,
+     "t1": 6,
+     "chars": 0,
+     "motion": 2,
+     "text": "A squall hits. Rain sheets sideways across the deck as the bow pitches into a wave."
+    },
+    {
+     "id": "4b",
+     "t0": 6,
+     "t1": 15,
+     "chars": 2,
+     "motion": 2,
+     "text": "Ines and Teo haul the bow line together, boots sliding, until the cleat holds."
+    }
+   ],
+   "res": "720p"
+  },
+  {
+   "id": 5,
+   "title": "The map",
+   "heading": "INT. WHEELHOUSE - NIGHT",
+   "hasRef": true,
+   "beats": [
+    {
+     "id": "5a",
+     "t0": 0,
+     "t1": 7,
+     "chars": 2,
+     "motion": 0,
+     "text": "Teo unfolds a damp hand-drawn map. Ines leans in under the chart lamp."
+    },
+    {
+     "id": "5b",
+     "t0": 7,
+     "t1": 14,
+     "chars": 0,
+     "motion": 0,
+     "text": "Insert. The map: a lighthouse circled in red, a date written beside it."
+    }
+   ],
+   "res": "720p"
+  },
+  {
+   "id": 6,
+   "title": "Landfall",
+   "heading": "EXT. LIGHTHOUSE - DAWN",
+   "hasRef": false,
+   "beats": [
+    {
+     "id": "6a",
+     "t0": 0,
+     "t1": 12,
+     "chars": 0,
+     "motion": 1,
+     "text": "Wide. The ferry rounds the point as the lighthouse beam fades into first light."
+    }
+   ],
+   "res": "720p"
+  }
+ ]
+}
